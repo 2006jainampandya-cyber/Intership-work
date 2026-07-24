@@ -3,6 +3,14 @@ import numpy as np
 from PIL import Image
 import tensorflow as tf
 
+# Limit TensorFlow threading and disable GPU checks to conserve RAM
+tf.config.threading.set_intra_op_parallelism_threads(1)
+tf.config.threading.set_inter_op_parallelism_threads(1)
+try:
+    tf.config.set_visible_devices([], 'GPU')
+except Exception:
+    pass
+
 import keras
 
 # Global variable to hold the model in memory
