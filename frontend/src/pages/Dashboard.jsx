@@ -232,7 +232,8 @@ export default function Dashboard() {
   const getImageUrl = (path) => {
     if (!path) return '';
     if (path.startsWith('http://') || path.startsWith('https://')) return path;
-    const url = `http://localhost:5000${path}`;
+    const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+    const url = `${baseUrl}${path}`;
     console.log("React image URL:", url);
     return url;
   };
