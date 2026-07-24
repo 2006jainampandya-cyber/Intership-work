@@ -3,6 +3,7 @@ import uuid
 import datetime
 import traceback
 import time
+from dotenv import load_dotenv
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from prediction import get_model, run_inference
@@ -11,6 +12,9 @@ from database import db, PredictionRecord, Patient, Technician
 import jwt
 from functools import wraps
 from flask_bcrypt import Bcrypt
+
+# Load environment variables from .env file for local development
+load_dotenv()
 
 app = Flask(__name__, static_folder='../Frontend/web-page/dist', static_url_path='/')
 # Enable CORS for React frontend integration
