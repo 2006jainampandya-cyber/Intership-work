@@ -592,11 +592,11 @@ export default function LandingPage() {
                       </div>
                       <div>
                         <strong style={{ display: 'block', color: 'var(--text-primary)', marginBottom: '2px' }}>Backend Server</strong>
-                        <span style={{ color: 'var(--text-secondary)', fontWeight: 500 }}>Node.js, Express, Multer uploads, PDFKit reports</span>
+                        <span style={{ color: 'var(--text-secondary)', fontWeight: 500 }}>Python, Flask, PyJWT, TensorFlow prediction</span>
                       </div>
                       <div>
                         <strong style={{ display: 'block', color: 'var(--text-primary)', marginBottom: '2px' }}>Database Storage</strong>
-                        <span style={{ color: 'var(--text-secondary)', fontWeight: 500 }}>MongoDB Atlas, Mongoose schemas integration</span>
+                        <span style={{ color: 'var(--text-secondary)', fontWeight: 500 }}>SQLite / PostgreSQL, Flask-SQLAlchemy ORM</span>
                       </div>
                     </div>
                   </div>

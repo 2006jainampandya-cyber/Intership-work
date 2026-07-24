@@ -5,8 +5,8 @@ import './index.css'
 import { AppProvider } from './context/AppContext.jsx'
 import axios from 'axios'
 
-// Direct connection to Node.js backend to bypass Vite proxy bottlenecks
-axios.defaults.baseURL = 'http://localhost:5000';
+// Direct connection to backend (configurable via environment variables in production)
+axios.defaults.baseURL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 axios.interceptors.response.use(
   response => response,
