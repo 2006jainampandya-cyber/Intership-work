@@ -22,7 +22,13 @@ from flask_bcrypt import Bcrypt
 # Load environment variables from .env file for local development
 load_dotenv()
 
-app = Flask(__name__, static_folder='../Frontend/web-page/dist', static_url_path='/')
+app = Flask(__name__, 
+            static_folder=os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'frontend', 'dist')), 
+            static_url_path='/')
+print("--- STATIC PATH DEBUG ---")
+print("Static Folder absolute path:", app.static_folder)
+print("Static Folder exists:", os.path.exists(app.static_folder))
+print("-------------------------")
 # Enable CORS for React frontend integration
 CORS(app)
 bcrypt = Bcrypt(app)
